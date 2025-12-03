@@ -36,7 +36,7 @@ body{
  @apply w-full btn btn-outline  rounded-3xl font-semibold text-primary hover:bg-primary hover:text-secondary-content
 }
 .btn-small{
-  @apply btn btn-sm bg-primary text-base-100 rounded-md shadow-md hover:bg-black transition-transform hover:scale-105 hover:text-base-100
+  @apply btn btn-sm bg-primary text-base-100 rounded-md shadow-md transition-transform hover:scale-105 hover:text-base-100
 }
 .btn-small-2{
   @apply btn btn-sm hover:bg-primary
@@ -46,4 +46,11 @@ body{
 }
 .navbar .active {
   @apply text-base-100 font-bold bg-primary rounded-2xl
+}
+.glass-card {
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  /* overflow: hidden; */
 }

@@ -9,6 +9,7 @@ import Signup from "../Pages/Signup";
 import PrivateRoute from "./PrivateRoute";
 import ForgetPassord from "../Pages/ForgetPassord";
 import Loding from "../Components/Loading/Loding";
+import AllSkills from "../Pages/AllSkills";
 
 export const router = createBrowserRouter([
   {
@@ -49,6 +50,11 @@ export const router = createBrowserRouter([
       {
         path: "forget-password",
         Component: ForgetPassord,
+      },
+      {
+        path: "all-skills",
+        loader: () => fetch("/SkillListings.json"),
+        Component: AllSkills,
       },
     ],
   },
