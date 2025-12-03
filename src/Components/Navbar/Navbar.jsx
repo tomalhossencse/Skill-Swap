@@ -3,6 +3,8 @@ import { Link, NavLink, useNavigate } from "react-router";
 import Container from "../Container/Container";
 import { AuthContext } from "../../Context/AuthContext";
 import toast from "react-hot-toast";
+import { IoLogIn } from "react-icons/io5";
+import { HiMiniArrowRightOnRectangle } from "react-icons/hi2";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -75,7 +77,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="bg-base-100 shadow-sm mb-8">
+    <div className="bg-base-100 shadow-md fixed w-full top-0 z-20 md:px-0 px-4">
       <Container>
         <div className="navbar">
           <div className="navbar-start">
@@ -108,7 +110,7 @@ const Navbar = () => {
                 {links}
               </ul>
             </div>
-            <a className="btn btn-ghost text-xl">SkillSwap</a>
+            <a className="btn btn-ghost font-bold text-2xl">SkillSwap</a>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">{links}</ul>
@@ -127,13 +129,13 @@ const Navbar = () => {
                   </span>
                 </div>
                 <button onClick={logout} className="btn-small">
-                  Logout
+                  Logout <HiMiniArrowRightOnRectangle size={16} />
                 </button>
               </>
             ) : (
               <>
                 <Link to="/login" className="btn-small">
-                  Login
+                  <IoLogIn /> Login
                 </Link>
                 <Link to="/signup" className="btn-small">
                   Signup

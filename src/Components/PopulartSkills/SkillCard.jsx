@@ -9,9 +9,8 @@ const SkillCard = ({ data }) => {
   const { skillName, rating, price, skillId, image } = data;
   return (
     <div
-      className="flex flex-col bg-base-200 p-6 rounded-xl space-y-2 shadow-md 
-            transform transition duration-300 ease-in-out 
-            hover:scale-105 hover:bg-accent-content hover:-translate-y-1"
+      className="flex flex-col bg-base-200 p-6 rounded-xl space-y-2 shadow-md
+transition-all duration-300 ease-out hover:scale-[1.03] hover:bg-accent-content hover:-translate-y-1"
     >
       <div className="w-full h-[250px]">
         <img className="rounded-xl w-full h-full object-cover" src={image} />

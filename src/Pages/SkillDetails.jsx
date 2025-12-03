@@ -26,7 +26,7 @@ const SkillDetails = () => {
     slotsAvailable,
   } = skill;
   return (
-    <Container>
+    <Container className="mt-26">
       <div className="md:flex items-start justify-start gap-10 my-10 mx-8 space-y-10">
         <img
           className="shadow-xl w-[500px] rounded-xl md:p-0 p-4"
