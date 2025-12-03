@@ -1,39 +1,42 @@
 import React from "react";
-import ratings from "../../assets/icon-ratings.png";
+import { HiMiniArrowSmallRight } from "react-icons/hi2";
+import { TbCoinFilled } from "react-icons/tb";
 import { Link, useLocation } from "react-router";
+import { Md18UpRating } from "react-icons/md";
+import { FaRegStar, FaStar } from "react-icons/fa";
 const SkillCard = ({ data }) => {
   const location = useLocation();
   const { skillName, rating, price, skillId, image } = data;
   return (
-    <div className="bg-base-100 p-6  space-y-2 h-full hover:scale-105 duration-200 ease-in shadow-md rounded-md relative">
-      <div className="flex items-center justify-center pt-2">
-        <img className="rounded-lg h-[180px]" src={image} alt="" />
+    <div
+      className="flex flex-col bg-base-200 p-6 rounded-xl space-y-2 shadow-md 
+            transform transition duration-300 ease-in-out 
+            hover:scale-105 hover:bg-accent-content hover:-translate-y-1"
+    >
+      <div className="w-full h-[250px]">
+        <img className="rounded-xl w-full h-full object-cover" src={image} />
       </div>
-      <p className="text-[#001931] font-medium text-lg px-4">{skillName}</p>
+      <p className="text-primary font-semibold text-xl px-4">{skillName}</p>
 
-      <div className="flex bg-blue-800 items-center justify-between py-1 px-3 gap-2 rounded-3xl absolute top-4 left-2">
-        <p className="text-yellow-300 font-medium">${price.toFixed(2)}</p>
-      </div>
-      <div
-        style={{
-          backgroundImage:
-            "url('https://i.ibb.co/gFfrs5L4/vecteezy-red-text-box-abstract-islamic-shape-banner-29208514.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-        className="flex items-center justify-between py-2 px-3 gap-2 rounded-lg absolute top-4 right-2"
-      >
-        <img className="w-4" src={ratings} alt="" />
-        <p className="text-white font-medium">{rating}</p>
+      <div className="flex justify-between px-2">
+        <div className="flex items-center text-accent justify-between py-1 px-3 gap-2 rounded-3xl">
+          <TbCoinFilled size={20} />
+          <p className="font-medium">{price.toFixed(2)}</p>
+        </div>
+        <div className="flex text-accent items-center justify-between py-2 px-3 gap-2 rounded-lg">
+          <FaStar />
+          <p className="font-medium">{rating}</p>
+        </div>
       </div>
 
-      <div className="flex items-center justify-between py-2 px-3 gap-2 rounded-lg">
+      <div className="flex w-full items-center justify-center py-2 px-3 gap-2 rounded-lg">
         <Link
           state={location?.pathname}
           to={`/skill-details/${skillId}`}
-          className="font-medium btn w-full bg-black text-white"
+          className="w-full btn-outline-small"
         >
           View Details
+          <HiMiniArrowSmallRight size={24} />
         </Link>
       </div>
     </div>

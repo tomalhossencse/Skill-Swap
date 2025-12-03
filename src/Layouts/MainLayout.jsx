@@ -5,7 +5,7 @@ import Footer from "../Components/Footer/Footer";
 import { Toaster } from "react-hot-toast";
 const MianLayout = () => {
   return (
-    <div className="bg-[#F7F7F7]">
+    <div>
       <Navbar />
       <main className="min-h-screen">
         <Outlet />
