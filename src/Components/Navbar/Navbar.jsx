@@ -81,7 +81,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="shadow-md fixed w-full glass-card top-0 z-20 md:px-0 px-4">
+    <div className="shadow-md bg-base-100 fixed w-full glass-card top-0 z-20 md:px-0 px-4">
       <Container>
         <div className="navbar">
           <div className="navbar-start">
