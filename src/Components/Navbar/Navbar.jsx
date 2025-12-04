@@ -36,9 +36,11 @@ const Navbar = () => {
       <li className="mr-4">
         <NavLink to="/all-skills">All Skills</NavLink>
       </li>
-      <li className="mr-4">
-        <NavLink to="/profile">My Profile</NavLink>
-      </li>
+      {user && (
+        <li className="mr-4">
+          <NavLink to="/profile">My Profile</NavLink>
+        </li>
+      )}
       <li className="mr-4">
         <label className="flex cursor-pointer gap-2">
           <svg
@@ -112,7 +114,14 @@ const Navbar = () => {
                 {links}
               </ul>
             </div>
-            <a className="btn btn-ghost font-bold text-2xl">SkillSwap</a>
+            <a className="btn btn-ghost font-bold text-2xl">
+              <img
+                className="w-8 mr-1"
+                src="https://i.ibb.co.com/TJKWy3Y/Asset-1.png"
+                alt=""
+              />{" "}
+              SkillSwap
+            </a>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">{links}</ul>

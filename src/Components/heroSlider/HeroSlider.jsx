@@ -31,7 +31,7 @@ const HeroSlider = () => {
         className="bg-accent-content max-w-7xl mx-auto"
       >
         <SwiperSlide>
-          <div className="flex flex-col md:flex-row items-center justify-between bg-accent-content px-6 md:px-10 py-6">
+          <div className="flex flex-col-reverse md:flex-row items-center justify-between bg-accent-content px-6 md:px-10 py-8">
             <div className="md:w-1/2 text-center md:text-left space-y-4">
               <h1 className="text-2xl md:text-3xl lg:4xl font-bold text-accent">
                 Personal Fitness Coaching
@@ -54,7 +54,7 @@ const HeroSlider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="flex flex-col md:flex-row items-center justify-between bg-accent-content px-6 py-6 md:px-10">
+          <div className="flex flex-col-reverse md:flex-row items-center justify-between bg-accent-content px-6 md:px-10 py-8">
             <div className="md:w-1/2 text-center md:text-left space-y-4">
               <h1 className="text-2xl md:text-3xl lg:4xl font-bold text-accent">
                 Yoga & Fitness
@@ -77,7 +77,7 @@ const HeroSlider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="flex flex-col md:flex-row items-center justify-between bg-accent-content px-6 md:px-10 py-6">
+          <div className="flex flex-col-reverse md:flex-row items-center justify-between bg-accent-content px-6 md:px-10 py-8">
             <div className="md:w-1/2 text-center md:text-left space-y-4">
               <h1 className="text-2xl md:text-3xl lg:4xl font-bold text-accent">
                 Home Gardening Tips

@@ -2,7 +2,6 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import MainLayout from "../Layouts/MainLayout";
 import Home from "../Pages/Home";
-import MyProfile from "../Pages/MyProfile";
 import SkillDetails from "../Pages/SkillDetails";
 import Login from "../Pages/Login";
 import Signup from "../Pages/Signup";
@@ -35,11 +34,7 @@ export const router = createBrowserRouter([
       {
         path: "skill-details/:id",
         loader: () => fetch("/SkillListings.json"),
-        element: (
-          <PrivateRoute>
-            <SkillDetails></SkillDetails>
-          </PrivateRoute>
-        ),
+        element: <SkillDetails></SkillDetails>,
       },
       {
         path: "login",

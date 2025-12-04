@@ -3,15 +3,22 @@ import Container from "../Container/Container";
 import { IoMdMail } from "react-icons/io";
 import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import { useNavigate } from "react-router";
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <div className="bg-primary text-white mt-12 md:px-0 px-6 ">
       <Container>
         <div className="py-16">
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 justify-between py-16 gap-10 text-sm">
             <div className="col-span-2">
-              <h1 className="text-xl font-medium pb-6">CS — SkillSwap</h1>
+              <button
+                onClick={() => navigate("/")}
+                className="text-xl cursor-pointer  font-medium pb-6"
+              >
+                SkillSwap
+              </button>
               <p className="text-white">
                 An interactive platform for individuals to offer, learn, and
                 trade skills within their local area. Whether it’s guitar

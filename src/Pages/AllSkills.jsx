@@ -28,11 +28,11 @@ const AllSkills = () => {
     <div>
       <div className="my-26">
         <Container>
-          <h1 className="text-3xl md:text-4xl font-bold text-center mb-8">
+          <h1 className="text-3xl md:text-4xl font-bold text-center mb-4">
             All Skills
           </h1>
-          <div className="flex  justify-between px-4">
-            <p className="md:text-2xl text-md text-primary font-semibold flex-1">
+          <div className="md:flex  justify-between px-4">
+            <p className="md:text-2xl text-md text-primary p-4 font-semibold flex-1">
               Skills found : {filterSkills.length}
             </p>
             <div className="flex gap-4 mb-6 flex-2 justify-end">
@@ -44,7 +44,9 @@ const AllSkills = () => {
               >
                 <option value="">All Categories</option>
                 {uniqueCategories.map((cat) => (
-                  <option value={cat}>{cat}</option>
+                  <option key={cat} value={cat}>
+                    {cat}
+                  </option>
                 ))}
               </select>
 
@@ -62,7 +64,7 @@ const AllSkills = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-6 lg:p-0 px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-6 lg:p-0 px-6">
             {filterSkills.map((data, index) => (
               <SkillCard data={data} key={index} />
             ))}

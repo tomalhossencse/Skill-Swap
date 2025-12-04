@@ -54,18 +54,18 @@ const SkillDetails = () => {
               Provided by : <span>{providerName}</span>
             </button>
           </div>
-          <div className="flex justify-between gap-8 items-center py-6">
-            <div className="flex flex-col justify-center items-center gap-1">
+          <div className="flex md:flex-row flex-col justify-between gap-6 items-start py-6">
+            <div className="flex md:flex-col flex-row  justify-between items-center  md:gap-1 gap-6">
               <img className="w-8" src={reactimg} alt="" />
               <h3>slots Available</h3>
               <p className="text-3xl font-extrabold">{slotsAvailable}</p>
             </div>
-            <div className="flex flex-col justify-center items-center gap-1">
+            <div className="flex md:flex-col flex-row  justify-between items-center md:gap-1 gap-6">
               <img className="w-8" src={ratingImg} alt="" />
               <h3>Average Ratings</h3>
               <p className="text-3xl font-extrabold">{rating}</p>
             </div>
-            <div className="flex flex-col justify-center items-center gap-1 ">
+            <div className="flex md:flex-col flex-row  justify-between items-center md:gap-1 gap-2">
               <MdEmail className="text-success" size={40} />
               <h3>Provider Email : </h3>
               <p className="text-xl font-semibold">{providerEmail}</p>

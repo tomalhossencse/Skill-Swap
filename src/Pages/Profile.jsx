@@ -53,7 +53,6 @@ const Profile = () => {
           </div>
 
           <div className="flex gap-3">
-            <button className="btn-primary">Edit Profile</button>
             <button onClick={logout} className="btn btn-outline btn-sm px-5">
               Logout
             </button>
