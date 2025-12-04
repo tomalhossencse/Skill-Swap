@@ -11,7 +11,7 @@ const SingleTop = ({ top }) => {
       <div className="flex-col flex justify-center items-center">
         <img className="h-[140px] rounded-full" src={ProviderImg} alt="" />
       </div>
-      <h1 className="text-xl font-semibold text-warning">{providerName}</h1>
+      <h1 className="text-xl font-semibold text-success">{providerName}</h1>
       <p className="text-sm">{skillName}</p>
       <div className="flex justify-center gap-2 items-center">
         <FaFacebookSquare size={20} color="#1877F2" />

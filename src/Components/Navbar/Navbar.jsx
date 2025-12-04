@@ -30,16 +30,16 @@ const Navbar = () => {
   };
   const links = (
     <>
-      <li>
+      <li className="mr-4">
         <NavLink to="/">Home</NavLink>
       </li>
-      <li>
+      <li className="mr-4">
         <NavLink to="/all-skills">All Skills</NavLink>
       </li>
-      <li>
-        <NavLink to="/user-profile">My Profile</NavLink>
+      <li className="mr-4">
+        <NavLink to="/profile">My Profile</NavLink>
       </li>
-      <li>
+      <li className="mr-4">
         <label className="flex cursor-pointer gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"

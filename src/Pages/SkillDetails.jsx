@@ -4,14 +4,20 @@ import ratingImg from "../assets/icon-ratings.png";
 import reactimg from "../assets/icon-review.png";
 import { MdEmail } from "react-icons/md";
 import Container from "../Components/Container/Container";
-import BookSession from "./BookSession";
 import { TbCoinFilled } from "react-icons/tb";
+import SkillNotFoundError from "./SkillNotFoundError";
 const SkillDetails = () => {
+  const [notFound, setNotFound] = useState(false);
   const [skill, setSkills] = useState({});
   const data = useLoaderData();
   const { id } = useParams();
+
   useEffect(() => {
     const filterData = data.find((d) => d.skillId == id);
+    if (!filterData) {
+      setNotFound(true);
+      return;
+    }
     setSkills(filterData);
   }, [id, data]);
   //   console.log(filterData);
@@ -26,6 +32,9 @@ const SkillDetails = () => {
     skillName,
     slotsAvailable,
   } = skill;
+  if (notFound) {
+    return <SkillNotFoundError />;
+  }
   return (
     <Container className="mt-26">
       <div className="md:flex items-start justify-start gap-10 my-10 mx-8 space-y-10">

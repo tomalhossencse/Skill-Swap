@@ -30,10 +30,10 @@ const data = [
 const HowItWorks = () => {
   return (
     <Container>
-      <h1 className="text-3xl md:text-4xl font-bold text-center mb-8">
+      <h1 className="text-3xl md:text-4xl font-bold text-center mb-12">
         How it works
       </h1>
-      <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 md:px-8 lg:p-0">
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 px-6 md:p-0">
         {data.map((d, index) => (
           <SingleHowItworks d={d} key={index} />
         ))}

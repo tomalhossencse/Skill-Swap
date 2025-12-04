@@ -8,14 +8,16 @@ import Login from "../Pages/Login";
 import Signup from "../Pages/Signup";
 import PrivateRoute from "./PrivateRoute";
 import ForgetPassord from "../Pages/ForgetPassord";
-import Loding from "../Components/Loading/Loding";
 import AllSkills from "../Pages/AllSkills";
+import ErrorPage from "../Pages/ErrorPage";
+import Profile from "../Pages/Profile";
+import Loading from "../Utility/Loading";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     Component: MainLayout,
-    hydrateFallbackElement: <Loding />,
+    hydrateFallbackElement: <Loading />,
     children: [
       {
         index: true,
@@ -23,21 +25,21 @@ export const router = createBrowserRouter([
         Component: Home,
       },
       {
-        path: "user-profile",
+        path: "profile",
         element: (
           <PrivateRoute>
-            <MyProfile />
+            <Profile />
           </PrivateRoute>
         ),
       },
       {
         path: "skill-details/:id",
+        loader: () => fetch("/SkillListings.json"),
         element: (
           <PrivateRoute>
             <SkillDetails></SkillDetails>
           </PrivateRoute>
         ),
-        loader: () => fetch("/SkillListings.json"),
       },
       {
         path: "login",
@@ -55,6 +57,10 @@ export const router = createBrowserRouter([
         path: "all-skills",
         loader: () => fetch("/SkillListings.json"),
         Component: AllSkills,
+      },
+      {
+        path: "*",
+        Component: ErrorPage,
       },
     ],
   },

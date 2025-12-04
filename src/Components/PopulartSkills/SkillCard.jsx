@@ -1,12 +1,16 @@
 import React from "react";
+import { BiSolidCategory } from "react-icons/bi";
+import { RiMoneyDollarCircleFill } from "react-icons/ri";
 import { HiMiniArrowSmallRight } from "react-icons/hi2";
 import { TbCoinFilled } from "react-icons/tb";
 import { Link, useLocation } from "react-router";
 import { Md18UpRating } from "react-icons/md";
 import { FaRegStar, FaStar } from "react-icons/fa";
+import { FaArrowRightLong } from "react-icons/fa6";
 const SkillCard = ({ data }) => {
   const location = useLocation();
-  const { skillName, rating, price, skillId, image, description } = data;
+  const { skillName, rating, price, skillId, image, description, category } =
+    data;
   return (
     <div
       className="flex flex-col justify-between bg-base-200 p-4 rounded-xl space-y-2 shadow-md
@@ -28,16 +32,21 @@ transition-all duration-300 ease-out hover:scale-[1.03] hover:bg-accent-content 
         </div>
       </div>
       <p className="px-2 text-gray-400 line-clamp-2">{description}</p>
-
-      <div className="flex w-full items-center justify-center py-2 px-3 gap-2 rounded-lg">
+      <div className="flex justify-between text-accent p-4">
         <Link
-          state={location?.pathname}
           to={`/skill-details/${skillId}`}
-          className="w-full btn-outline-small"
+          state={location?.pathname}
+          className="flex items-center justify-center gap-2 text-primary text-md rounded-md transition-transform hover:scale-105 hover:text-warning"
         >
-          View Details
-          <HiMiniArrowSmallRight size={24} />
+          <span>See Details</span>
+          <FaArrowRightLong size={15} />
         </Link>
+        <li className="flex items-center justify-center gap-1 text-warning">
+          <span>
+            <BiSolidCategory />
+          </span>
+          <span>{category}</span>
+        </li>
       </div>
     </div>
   );
