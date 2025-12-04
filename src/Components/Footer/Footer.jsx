@@ -6,7 +6,7 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <div className="bg-primary text-white mt-12 lg:px-0 md:px-6 ">
+    <div className="bg-primary text-white mt-12 md:px-0 px-6 ">
       <Container>
         <div className="py-16">
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 justify-between py-16 gap-10 text-sm">

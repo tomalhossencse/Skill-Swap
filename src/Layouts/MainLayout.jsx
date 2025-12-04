@@ -3,9 +3,11 @@ import Navbar from "../Components/Navbar/Navbar";
 import { Outlet } from "react-router";
 import Footer from "../Components/Footer/Footer";
 import { Toaster } from "react-hot-toast";
+import ScrollToTop from "../Utility/ScrollToTop";
 const MianLayout = () => {
   return (
     <div>
+      <ScrollToTop />
       <Navbar />
       <main className="min-h-screen">
         <Outlet />

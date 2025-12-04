@@ -5,6 +5,7 @@ import reactimg from "../assets/icon-review.png";
 import { MdEmail } from "react-icons/md";
 import Container from "../Components/Container/Container";
 import BookSession from "./BookSession";
+import { TbCoinFilled } from "react-icons/tb";
 const SkillDetails = () => {
   const [skill, setSkills] = useState({});
   const data = useLoaderData();
@@ -29,25 +30,22 @@ const SkillDetails = () => {
     <Container className="mt-26">
       <div className="md:flex items-start justify-start gap-10 my-10 mx-8 space-y-10">
         <img
-          className="shadow-xl w-[500px] rounded-xl md:p-0 p-4"
+          className="shadow-xl w-[500px] rounded-xl md:p-0 p-4 transition-all duration-300 ease-out hover:scale-[1.03] hover:bg-accent-content hover:-translate-y-1"
           src={image}
         />
         <div>
-          <div className="border-b-2 border-gray-300 pb-4">
-            <h3 className="text-black md:text-3xl text-2xl font-bold">
+          <div className="border-b-2 border-gray-300 space-y-2 pb-4">
+            <h3 className="text-primary md:text-3xl text-2xl font-bold">
               {skillName}
             </h3>
-            <p className="text-black text-left">
-              Category :{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-tl from-[#9F62F2] to-[#632EE3]">
-                {category}
-              </span>
+            <p className="text-accent text-left">
+              Category : <span className="font-bold">{category}</span>
             </p>
-            <button className="text-white text-left btn bg-amber-400 w-2/3">
+            <button className="text-white text-left btn bg-warning w-full">
               Provided by : <span>{providerName}</span>
             </button>
           </div>
-          <div className="flex justify-between gap-4 items-center py-6">
+          <div className="flex justify-between gap-8 items-center py-6">
             <div className="flex flex-col justify-center items-center gap-1">
               <img className="w-8" src={reactimg} alt="" />
               <h3>slots Available</h3>
@@ -56,26 +54,28 @@ const SkillDetails = () => {
             <div className="flex flex-col justify-center items-center gap-1">
               <img className="w-8" src={ratingImg} alt="" />
               <h3>Average Ratings</h3>
-              <p className=" text-3xl font-extrabold">{rating}</p>
+              <p className="text-3xl font-extrabold">{rating}</p>
             </div>
-            <div className="flex flex-col justify-center items-center gap-1">
-              <MdEmail color="#ff0000" size={40} />
+            <div className="flex flex-col justify-center items-center gap-1 ">
+              <MdEmail className="text-success" size={40} />
               <h3>Provider Email : </h3>
               <p className="text-xl font-semibold">{providerEmail}</p>
             </div>
           </div>
           <div className="text-left">
-            <button className={`btn bg-[#00D390] text-white`}>
-              Price : ${price}
-            </button>
+            <div className="flex gap-4 btn-small-full">
+              <TbCoinFilled size={20} />
+              <span> {price}</span>
+            </div>
           </div>
         </div>
       </div>
-      <div className="p-4">
-        <p className="text-black text-2xl font-bold text-left">Description :</p>
-        <p className="text-black text-left">{description}</p>
+      <div className="p-6 space-y-2">
+        <p className="text-accent text-2xl font-bold text-left">
+          Description :
+        </p>
+        <p className="text-left">{description}</p>
       </div>
-      <BookSession />
     </Container>
   );
 };
